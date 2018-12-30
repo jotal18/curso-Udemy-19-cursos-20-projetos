@@ -1,0 +1,18 @@
+{
+	"name": "miniframework", 
+	"require": { 
+		"php": ">=7.0"
+	},
+	"authors": [
+		{
+			"name": "Jota",
+			"email": "jota@teste.com.br" 
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"APP\\": "App/",
+			"MF\\": "vendor/MF/"
+ 		}
+	}
+}

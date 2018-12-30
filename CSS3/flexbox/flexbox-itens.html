@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Flexbox - Flexible Box Layout</title>
+		<meta charset="utf-8">
+
+		<style type="text/css">
+
+			#conteudo {
+				background: #dcdcdc;
+				height: 600px;
+				
+				/* Display - Flex*/
+				display: -webkit-box;/*prefixos*/
+				display: -ms-flexbox;/*prefixos*/
+				display: flex;
+
+				/*
+				Sentido dos elementos
+				row|row-reverse|column|column-reverse
+				flex-direction: row;
+				
+				Quebra ou não de linha
+				nowwrap|wrap|wrap-reverse
+				flex-wrap: nowrap;
+
+				Alinhamento e distribuição horizontal
+				flex-start|flex-end|center|space-between|space-around
+				justify-content: space-around;
+
+				Alinhamento vertical
+				strech|center|flex-start|flex-end|baseline
+				align-items: baseline;*/
+				
+			}
+
+			.item {
+				/*width: 200px;*/
+				height: 100px;
+				margin: 10px;
+				background: white;
+				border:1px solid gray;
+
+				/*Define a proporção de espaço ocupado por um item*/
+				-webkit-box-flex: 0;/*prefixos*/
+				-ms-flex-positive: 0;/*prefixos*/
+				flex-grow: 0;
+
+				/*Define a capacidade de redução de tamanho do item*/
+				-ms-flex-negative: 1;/*prefixos*/
+				flex-shrink: 1;
+
+				/*Indica o tamanho inicial do flex item antes da distribuição do espaço restante*/
+				-ms-flex-preferred-size: 100px;/*prefixos*/
+				flex-basis: 100px;
+			}
+
+			.item1 {
+				/*flex-grow: 1;*/
+				/*flex-shrink: 1;*/
+			}
+
+			.item2 {
+				flex-grow: 1;
+				/*flex-shrink: 2;*/
+			}
+
+			.item3 {
+				flex-grow: 2;
+				/*flex-shrink: 5;*/
+			}
+
+			/*
+			.ordem1 {
+				/*Define a ordem um flex-item
+				order: 1;
+			}
+
+			.ordem2 {
+				order: 2;
+			}
+
+			.ordem3 {
+				order: 3;
+			}
+
+			.ordem4 {
+				order: 4;
+			}
+
+			.ordem {
+				order: -1;
+			}*/
+
+		</style>
+	</head>
+
+	<body>	
+
+		<h1>Flexbox</h1>
+		<div id="conteudo">
+			<div class="item item1">01</div>
+			<div class="item item2">02</div>
+			<div class="item item3">03</div>
+			<div class="item">04</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Novas tags de input html 5</title>
+	<meta charset="utf-8">
+
+	<!-- Estilo customizado -->
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<form>
+		<!-- Novos inputs e atributos HTML5 -->
+		<label for="nome">Nome</label>
+		<input type="text" id="nome" required="required" autofocus="autofocus">
+		<br><br>
+
+		<!-- Email -->
+		<label for="email">Email</label>
+		<input type="email" id="email" required="required">
+		<br><br>
+
+		<!-- Número -->
+		<label for="numero">Número</label>
+		<input type="number" id="numero" min="1" max="20" step="5">
+		<br><br>
+
+		<!-- URL -->
+		<label for="url">URL</label>
+		<input type="url" id="url" placeholder="ex: http://www...">
+		<br><br>
+
+		<!-- Search -->
+		<label for="search">Pesquisa</label>
+		<input type="search" id="search">
+		<br><br>
+
+		<!-- Range -->
+		<label for="range">Range</label>
+		<input type="range" id="range" min="1" max="3" value="1">
+		<br><br>
+
+		<!-- Date -->
+		<label for="date">Data</label>
+		<input type="date" id="date">
+		<br><br>
+
+		<!-- Cor -->
+		<label for="cor">Cor</label>
+		<input type="color" id="cor">
+		<br><br>
+
+		<input type="submit" name="" value="Enviar">
+	</form>
+</body>
+</html>

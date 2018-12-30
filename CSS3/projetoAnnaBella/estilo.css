@@ -1,0 +1,39 @@
+body{
+	background: #D8D8D8 url('imagens/fundo.png');
+	font: 16px Arial, Helvetica, sans-serif; 
+}
+
+#principal{
+	width: 900px;
+}
+
+#menu{
+	background-color: #A4A4A4;
+	padding: 18px;
+}
+
+a{
+	font-weight: bold;
+	color: #424242;
+	text-decoration: none;
+	padding: 5px;
+}
+
+#conteudo{
+	padding: 10px;
+	background: #FAFAFA;
+}
+
+h1{
+	color: #585858;
+	font-size: 1.2em;
+}	
+
+#rodape{
+	text-align: center;
+}
+
+.img-publicidade{
+	border: 15px solid #BDBDBD;
+}
+

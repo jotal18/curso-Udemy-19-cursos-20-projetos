@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Elementos Flutuantes</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+
+		#principal{
+			width: 980px;
+			border: 1px solid green;
+		}
+
+		.noticia{
+			border: 1px solid red;
+			background-color: #BDBDBD;
+			padding: 5px;
+			width: 280px;
+			float: left;
+			margin: 10px
+		}
+
+		.imagem-galeria{
+			width: 280px;
+			padding: 5px;
+			background: white;
+			float: left;
+
+		}
+
+		.clear{
+			clear: both;
+		}
+
+		#container{
+			background: #fff;
+			width: 800px;
+			margin: 10px auto;
+			padding: 10px;
+			position: relative;	
+		}
+
+		h1{
+
+		}
+
+		p{
+			width: 300px;
+		}
+
+		.relative{
+			border: 1px solid red;
+			position: relative;
+			top: 0px;
+			right: 0px;
+			bottom: -20px;
+		}
+
+		.absolute{
+			border: 1px solid red;
+			background: #f2f2f2;
+			position: absolute;
+			top: 50px;
+			right: 20px;
+		}
+
+		.fixed{
+			border: 1px solid red;
+			background: #f2f2f2;
+			margin: 0px;
+			position: fixed;
+			top: 0px;
+			right: 0px;
+			text-align: justify;
+		}
+
+		.conteudo1{
+			border: 1px solid red;
+			background: orange;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			z-index: 0;
+		}
+
+		.conteudo2{
+			border: 1px solid red;
+			background: green;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			left: 80px;
+			top: 200px;
+			z-index: 1;
+		}
+
+		.conteudo3{
+			border: 1px solid red;
+			background: white;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			left: 200px;
+			top: 200px;
+			z-index: 1;
+		}
+
+		a{
+			text-decoration: none;
+			padding: 5px 10px;
+		}
+
+		a:link{
+			color: blue;
+		}
+
+		a:visited{
+			color: green;
+		}
+
+		a:hover{
+			color: #fff;
+			background: #6d790f;
+		}
+
+		a:active{
+			color: black;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- <div id="principal">
+		<div>
+			<div class="noticia">
+				<h2>O que é o Lorem Ipsum?1</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tincidunt lectus. Proin varius arcu ac lectus porta ullamcorper. Suspendisse lobortis orci et enim ullamcorper pellentesque.
+				</p>
+				<a href="">Veja mais</a>
+			</div>
+
+			<div class="noticia">
+				<h2>O que é o Lorem Ipsum?2</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tincidunt lectus. Proin varius arcu ac lectus porta ullamcorper. Suspendisse lobortis orci et enim ullamcorper pellentesque.
+				</p>
+				<a href="">Veja mais</a>
+			</div>
+
+			<div class="noticia">
+				<h2>O que é o Lorem Ipsum?3</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tincidunt lectus. Proin varius arcu ac lectus porta ullamcorper. Suspendisse lobortis orci et enim ullamcorper pellentesque.
+				</p>
+				<a href="">Veja mais</a>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div>
+			<div class="imagem-galeria">
+				<img src="imagens/imagem1.png">
+				<p>Resumo</p>
+			</div>
+
+			<div class="imagem-galeria">
+				<img src="imagens/imagem2.png">
+				<p>Resumo</p>
+			</div>
+
+			<div class="imagem-galeria">
+				<img src="imagens/imagem3.png">
+				<p>Resumo</p>
+			</div>
+
+			<div class="imagem-galeria">
+				<img src="imagens/imagem4.png">
+				<p>Resumo</p>
+			</div>
+
+			<div class="imagem-galeria">
+				<img src="imagens/imagem5.png">
+				<p>Resumo</p>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+	</div> -->
+
+	<div id="container">
+
+		<h1>Posição</h1>
+
+		<p>
+			P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tincidunt lectus. Proin varius arcu ac lectus porta ullamcorper. Suspendisse lobortis orci et enim ullamcorper pellentesque.
+		</p>
+
+		<p class="fixed">
+			P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tincidunt lectus. Proin varius arcu ac lectus porta ullamcorper. Suspendisse lobortis orci et enim ullamcorper pellentesque.
+		</p>
+
+		<p>
+			P3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tincidunt lectus. Proin varius arcu ac lectus porta ullamcorper. Suspendisse lobortis orci et enim ullamcorper pellentesque.
+		</p>
+	</div>	
+
+	<div class="conteud">
+		Conteudo 1
+	</div>
+
+	<div class="conteud">
+		Conteudo 2
+	</div>
+
+	<div class="conteud">
+		Conteudo 3
+	</div>
+
+	<a href="https://www.google.com.br/">Google</a> |
+	<a href="https://www.youtube.com/?gl=BR">Youtube</a>
+
+	
+</body>
+</html>
