@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>For in</title>
+	<script>
+		// var lista_convidados = ['Maria', 'Joana', 'José', 'João']
+		var lista_convidados = []
+		lista_convidados['a'] = 'Maria'
+		lista_convidados[10] = 'Joana'
+		lista_convidados['zebra'] = 'José'
+		lista_convidados[true] = 'João'
+
+		// Pega somente as chaves do array
+		for ( var x in lista_convidados) {
+			document.write(lista_convidados[x])
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Tratamento de erros</title>
+		<script>
+			var video = []
+			video[1] = []
+			video[1]['nome'] = 'Fullmetal Alchemist'
+			video[1]['categoria'] = 'anime'
+			function getVideo(video) {
+				try {
+					// lógica
+					console.log(video[0]['nome'])
+				} catch(erro) {
+					tratarErro(erro)
+					console.log('Tratar erro aqui!!!')
+					throw new Error ('Houve um exceção, o script irá parar de executar')
+				}finally {
+					console.log('Sempre passa por aqui (try / catch')
+				}
+			}
+			function tratarErro(e) {
+				console.log(e)
+			}
+			getVideo(video)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>While</title>
+	<script>
+		var x = 1
+
+		/*while(x <= 10) {
+			// Opção para parar o laço
+			if (x === 5) {
+				break
+			}
+
+			document.write(x + '<br />')
+
+			x++
+			// ou x += 3...
+		}*/
+
+		while(x <= 10)	 {
+			x++
+			// pula a execução do laço nesse ponto e começa de cima novamente
+			if (x === 5) {
+				continue
+			}
+			document.write(x + '<br />')
+
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

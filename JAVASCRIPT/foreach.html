@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Foreach</title>
+	<script>
+		var listaFuncionarios = ['Viviane', 'Rosângela', 'Miguel', 'Lucas', 'Fernanda']
+
+		/*
+		listaFuncionarios.forEach(function(valor, indice, array){
+			if (valor == 'Lucas') {
+				array[indice] = 'Um novo valor'
+			}
+		})
+		*/
+
+		// Não é necessário passar os três parâmetros
+		/*
+		listaFuncionarios.forEach(function(valor){
+			console.log(valor)
+		})
+		*/
+
+		// Pode ser passada uma função de callback ou uma variável que foi atribuída uma funcao anônima (técnia wrapper)
+		/*
+		var f = function(valor, indice) {
+			console.log(valor)	
+		}
+
+		listaFuncionarios.forEach(f)
+		*/
+
+
+		// O forEach() atua somente em valores numéricos iguais a zero ou superiores, 
+		// caso contrário ele desconsidera aquela posição do array
+		var listaFuncionarios = []
+		listaFuncionarios['x'] = 'Viviane'
+		listaFuncionarios[false] = 'Rosângela'
+		listaFuncionarios[3] = 'Miguel'
+		listaFuncionarios[27] = 'Lucas'
+		listaFuncionarios[-12] = 'Fernanda'
+
+		var f = function(valor, indice) {
+			console.log(valor)	
+		}
+
+		listaFuncionarios.forEach(f)
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

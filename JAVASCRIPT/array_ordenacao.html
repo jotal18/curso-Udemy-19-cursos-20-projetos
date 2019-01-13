@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Array Ordenação</title>
+	<script>
+		/*
+		var lista_frutas = []
+		lista_frutas[0] = 'Maçã'
+		lista_frutas[1] = 'Uva'
+		lista_frutas[2] = 'Banana'
+		lista_frutas[3] = 'Morango'
+
+		console.log(lista_frutas.sort())
+		*/
+
+		// A função sort trabalha com ordenação alfanumérica. Caso queira ordenar array totalmente numérico, será necessário passar
+		// a funcão abaixo (função callback) como parâmetro na função Sort()
+		var lista_numeros = []
+
+		lista_numeros[0] = 15
+		lista_numeros[1] = 7
+		lista_numeros[2] = 9
+		lista_numeros[3] = 3
+
+		console.log(lista_numeros.sort(ordenaNumeros))
+
+		function ordenaNumeros(a, b) {
+			return a-b
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
