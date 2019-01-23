@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script type="text/babel">
+			//3 escopos: global, função e bloco
+
+			// VAR
+			// var serie = 'Friends'
+
+			// {
+			// 	var serie = 'The Walking Dad' //essa variável irá sobrepor o valor da variável séria acima (hoisting)
+			// 	console.log('dentro do bloco ' + serie)
+			// }
+
+			// console.log('fora do bloco ' + serie) //irá imprimir The Walking Dad
+
+			// LET
+			let serie = 'Friends'
+
+			{
+				let serie = 'The Walking Dad' //essa variável irá sobrepor o valor da variável séria acima (hoisting)
+				console.log('dentro do bloco ' + serie)
+			}
+
+			console.log('fora do bloco ' + serie) //irá imprimir The Walking Dad
+
+
+			// Sempre use o LET
+
+		</script>
+	</head>
+	<body>
+		<div id="output"></div>
+	</body>
+</html>

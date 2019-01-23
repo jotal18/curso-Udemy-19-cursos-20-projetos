@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script type="text/babel">
+			// Classe = modelo
+			class ContaBancaria {
+
+				constructor () {
+					// atributos
+					this.agencia = 1075
+					this.numeroConta = 8351125
+					this.saldo = 50
+					this.limite = 450
+				}
+
+				// métodos=funções
+				depositar(valorDeposito) {
+					this.saldo += valorDeposito
+				}
+				sacar(valorSaque) {
+					this.saldo -= valorSaque
+				}
+				consultarSaldo() {
+					return this.saldo
+				}
+			}
+
+			// objeto instanciado
+			let x = new ContaBancaria()
+			let y = new ContaBancaria()
+
+			x.depositar(200)
+			x.sacar(20)
+			document.write(x.consultarSaldo())
+			document.write(y.consultarSaldo())
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

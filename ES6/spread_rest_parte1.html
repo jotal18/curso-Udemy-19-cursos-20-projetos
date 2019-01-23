@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script type="text/babel">
+			// contexto spread (espalhar)
+
+			// string
+			let tituloArtigo = 'Como utilizar o operador rest/spread'
+
+			console.log(tituloArtigo)
+			console.log(...tituloArtigo) //spread
+			console.log([...tituloArtigo]) //separa cada letra em um índice
+
+			// arrays
+			let listaCursos1 = ['NodeJs e MongoDB', 'ES6, TypeScript e Angular 4']
+			let listaCursos2 = ['Android/IOS', 'Introdução ao GNU/Linux']
+			let listaCursosCompleto = [...listaCursos2, 'Web Completo', 'Android Completo', ...listaCursos1] //inclui o array listaCursos1 e listaCursos2 no array listaCursosCompleto
+
+			console.log(listaCursosCompleto)
+
+			// objetos
+			let pessoa = { nome: 'João', idade: 27 }
+			let clone = { endereco: 'Rua Abc', ...pessoa } //inclui os atributos do objeto pessoa
+
+			console.log(clone)
+
+			// contexo rest (juntar)
+			//exemplo 1
+			function soma(...param) { //param no caso é um array
+				let resultado = 0
+				console.log(param)
+				param.forEach(v => resultado += v);
+				return resultado
+			}
+
+			console.log(soma(3,8,5,7))
+
+			// exemplo 2
+			function multiplicacao(m, ...p) { //...p é um array
+				console.log(m)
+				let resultado = 0
+				console.log(p)
+				p.forEach(v => resultado += m * v)
+				return resultado
+			}
+
+			console.log(multiplicacao(5, 7, 12, 3, 49))
+
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

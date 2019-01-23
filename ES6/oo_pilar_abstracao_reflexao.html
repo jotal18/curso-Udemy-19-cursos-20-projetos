@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script type="text/babel">
+			class Cadeira {
+				constructor(qtde_pernas, giratotia, cor) {
+					this.qtde_pernas = qtde_pernas
+					this.giratoria = giratotia
+					this.cor = cor
+				}
+
+				girarCadeira() {
+					if (this.giratoria === true) {
+						console.log('girou')
+					}else {
+						console.log('não gira')
+					}
+				}
+			}
+
+			let teste = new Cadeira(2, true , 'azul')
+			teste.girarCadeira()
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

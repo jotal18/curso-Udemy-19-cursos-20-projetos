@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script type="text/babel">
+			
+			Object.prototype.attr50 = 'z'
+
+			let animal = { attr1: 'a' } //como 'animal' não tem referência de protótipo (__proto__), por default, é o object, e herdará o atributo 'attr50' de Object.prototype
+			let vertebrado = { __proto__:animal, attr2: 'b' }
+			let ave = { __proto__: vertebrado, attr3: 'c' }
+
+			console.log(ave.attr1, ave.attr2, ave.attr3, ave.attr50) //ave consegue herdar o atributo 'attr50'
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

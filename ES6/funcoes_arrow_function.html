@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script type="text/babel">
+
+			// arrow function (funções anônimas)
+
+			// sintaxe sem parâmetro
+			// let quadrado = () => {
+			// 	return 3 * 3
+			// }
+			// document.write(quadrado())
+
+			// sintaxe com um parâmetro
+			// let quadrado = x => {
+			// 	return x * x
+			// }
+			// document.write(quadrado(3))
+
+			// sintaxe com mais de um parâmetro
+			// let multiplicacao = (x,y) => {
+			// 	return x * y
+			// }
+			// document.write(multiplicacao(2,3))
+
+			// sintaxe com apenas um return sem bloco
+			// let quadrado = x => x * x //return implícito
+			// document.write(quadrado(3))	
+
+			//escrita padrão
+			// let parOuImpar = function(numero) {
+			// 	if (numero % 2 === 0) {
+			// 		return 'par'
+			// 	}else {
+			// 		return 'ímpar'
+			// 	}
+			// }
+			// document.write(parOuImpar(55))
+
+			//código com arrow function
+			// let parOuImpar = numero => {
+			// 	if (numero % 2 === 0) {
+			// 		return 'par'
+			// 	}else {
+			// 		return 'ímpar'
+			// 	}
+			// }
+			// document.write(parOuImpar(50))			
+
+			// let parOuImpar = numero => numero = numero % 2 === 0 ? 'par' : 'impar'  //return implícito
+			// document.write(parOuImpar(50))			
+			
+		</script>
+	</head>
+	<body>
+		<div id="output"></div>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script type="text/babel">
+			
+			// DESTRUCTURING
+			// token
+			// array => []
+			// objeto => {}
+			// ------------------------------
+			// DESTRUCTURING COM ARRAY
+			/*
+			let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão']
+			
+			let [a, b, , d] = frutas //sintaxe pulando um índice
+			let [a, b = 'Abacate', c, d, e = 'Banana'] = frutas //sintaxe com valor default em caso de índice não existente
+
+			console.log(a, b, c, d, e)
+
+			let coisas = [['Abacaxi', 'Uva', 'Pera', 'Mamão'], ['José', 'Maria']]
+			let [, [, n2]] = coisas //sintaxe array multidimensional
+
+			console.log(n2)
+			*/
+			// ------------------------------------
+			// DESTRUCTURING COM OBJETO
+			/*
+			let produto = {
+				descricao: 'Notebook',
+				preco: 1800,
+				detalhes: {
+					fabricante: 'abc',
+					modelo: 'xyz'
+				}
+			}
+
+			let {descricao, preco} = produto //sintaxe padrão objeto
+			console.log(descricao, preco)
+
+			let {descricao: d, preco: p} = produto //sintaxe renomeando os atributos do objeto
+			console.log(d, p)
+
+			let {descricao: d, preco: p, desconto = 5} = produto //sintaxe com valor default em caso de atributo não existente
+			console.log(d, p, desconto)
+
+			let {detalhes: {fabricante, modelo}} = produto //sintaxe objeto dentro de um atributo de outro objeto
+			console.log(fabricante, modelo)
+			*/
+
+			// ------------------------------------
+			//DESTRUCTURING COM FUNÇÃO
+			/*
+			let arr = [10, 20, 30, 40]
+
+			function teste([a, b, , c, d = 100]) {
+				console.log(a, b, c, d)
+			}
+
+			teste(arr)
+			*/
+
+			/*
+			let obj = {
+				a: 10,
+				b: 20,
+				c: 30,
+				d: 40
+			}
+
+			function teste({a:x, b, c, d}) {
+				console.log(x, b, c, d)
+			}
+
+			teste(obj)
+			*/
+			// ---------------------------------
+			// DESTRUCTURING COM REST/SPREAD
+
+			/*
+			let arr = [10, 20, 30, 40]
+			let [a, ...resto] = arr //usando rest/spread
+
+			console.log(resto[0])
+			*/
+
+			let obj = {
+				a: 10, b: 20, c:30, d:40
+			}
+
+			let {a, ...z} = obj
+			console.log(z)
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

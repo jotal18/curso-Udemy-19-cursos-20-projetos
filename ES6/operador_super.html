@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script type="text/babel">
+
+			//superclasse
+			class Animal { 
+				constructor(cor, tamanho, peso) {
+					this.cor = cor
+					this.tamanho = tamanho
+					this.peso = peso
+				}
+
+				dormir() {
+					console.log('Dormir')
+				}
+			}
+			// utilizar o extends para chamar a classe principal
+			class Passaro extends Animal {
+				constructor(bico, cor, tamanho, peso) {
+					super(cor, tamanho, peso)
+					this.bico = bico
+				}
+
+				voar() {
+					console.log('Voar')
+				}
+			}
+
+			class Papagaio extends Passaro {
+				constructor(sabeFalar, bico, cor, tamanho, peso) {
+					super(bico, cor, tamanho, peso)
+					this.sabeFalar = sabeFalar
+				}
+
+				falar() {
+					console.log('Falar')
+				}
+			}
+
+			let papagaio = new Papagaio(true, 'grande', 'azul', 'pequeno', 5)
+			console.log(papagaio)
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

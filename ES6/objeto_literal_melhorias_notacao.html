@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script type="text/babel">
+
+			let nome = 'Pedro'
+			let idade = '20'
+			let sexo = 'Masculino'
+			let profissao = 'Programador'
+
+			let objeto = {
+				nome: nome,
+				idade: idade,
+				sexo: sexo,
+				profissao: profissao,
+				exibirResumo: function() {
+					console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`)
+				}
+			}
+
+			console.log(objeto)
+			objeto.exibirResumo()
+
+
+			// Melhoria na sintaxe a partir do ES6
+			let objeto2 = {
+				nome,
+				idade,
+				sexo,
+				profissao,
+				exibirResumo: function() {
+					console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`)
+				}
+			}
+
+			console.log(objeto2)
+			objeto.exibirResumo()
+
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
