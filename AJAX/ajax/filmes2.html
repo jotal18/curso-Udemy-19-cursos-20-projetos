@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Catálogo de filmes</title>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
+	<script src="xmltojson.js"></script>
+	<script>
+		function getFilmes() {
+			let jsonHttp = new XMLHttpRequest()
+			jsonHttp.open('GET', 'http://localhost/ajax/filmes.json') //localizando o arquivo JSON
+
+			jsonHttp.onreadystatechange = () => {
+				if (jsonHttp.readyState == 4 && jsonHttp.status == 200) {
+					let jsonFilmes = jsonHttp.responseText //arquivo JSON
+					let objJSONFilmes = JSON.parse(jsonFilmes) //transformando JSON em objeto literal
+					console.log(objJSONFilmes)
+					
+					for(let i in objJSONFilmes.filmes){
+						let item = objJSONFilmes.filmes[i] //percorrendo o array dentro do obj literal
+						console.log(item)
+
+						let divRow = document.createElement('div')
+						divRow.className = 'row'
+
+						let divCol = document.createElement('div')
+						divCol.className = 'col'
+
+						let p1 = document.createElement('p')
+						p1.innerHTML = '<strong>Título:</strong> ' + item.titulo
+
+						let p2 = document.createElement('p')
+						p2.innerHTML = '<strong>Resumo:</strong> ' + item.resumo
+
+						let genero = ''
+						for(let g in item.generos) {
+							if (genero) genero += ', ' //se gênero for vazio, nã entrará nesse bloco
+							
+							genero += item.generos[g].genero
+						}
+
+						let p3 = document.createElement('p')
+						p3.innerHTML = '<strong>Gênero:</strong> ' + genero
+
+						let elenco = ''
+						for(let e in item.elenco) {
+							if (elenco) elenco += ', ' //se gênero for vazio, nã entrará nesse bloco
+							
+							elenco += item.elenco[e].ator
+						}
+
+						let p4 = document.createElement('p')
+						p4.innerHTML = '<strong>Elenco:</strong> '+ elenco
+
+						let p5 = document.createElement('p')
+						p5.innerHTML = '<strong>Data de lançamento:</strong> ' + item.dataLancamento.data + ' ('+ item.dataLancamento.pais +')'
+
+						let hr = document.createElement('hr')
+
+						divRow.appendChild(divCol)
+						divCol.appendChild(p1)
+						divCol.appendChild(p2)
+						divCol.appendChild(p3)
+						divCol.appendChild(p4)
+						divCol.appendChild(p5)
+						divCol.appendChild(hr)
+
+						document.getElementById('lista').appendChild(divRow)
+						
+					}
+					
+			
+				}
+
+				if (jsonHttp.readyState == 4 && jsonHttp.status == 404) {
+					// ..
+				}
+			}
+
+			jsonHttp.send()
+		}
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light mb-4">
+		<div class="container">
+			<div class="navbar-brand mb-0 h1">
+				<h3>Catálogo de filmes</h3>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container" id="lista">
+		<div class="row mb-5">
+			<div class="col">
+				<button class="btn btn-success" type="button" onclick="getFilmes()">Listar Filmes</button>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
