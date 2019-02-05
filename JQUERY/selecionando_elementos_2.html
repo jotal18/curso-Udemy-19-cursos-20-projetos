@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery</title>
+		<!-- link cdn -->
+		<script
+		src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+		</script>
+	</head>
+	<body>
+		<input class="exemplo1" type="text" placeholder="input 1">
+		<input type="text" placeholder="input 2">
+		<input type="text" placeholder="input 3">
+		<div class="lista1">
+			<div class="exemplo2">div 1</div>
+			<div class="exemplo2">div 2</div>
+			<div class="exemplo2">div 3</div>
+		</div>
+		<ul class="lista1">
+			<li>opção 1</li>
+			<li class="exemplo2">opção 2</li>
+			<li class="exemplo2">opção 3</li>
+		</ul>
+		<ul class="lista2">
+			<li class="exemplo2">opção 1</li>
+			<li>opção 2</li>
+			<li>opção 3</li>
+		</ul>
+	</body>
+	<script>
+		// combinação de seletores
+			//selecionar elementos por classe de tag específica
+			console.log($('div.exemplo1'))
+			//selecionar elementos por classe de classe específica
+			console.log($('.lista2 .exemplo2'))
+		//atuação sobre o array de retorno dos elementos selecionados
+		console.log($('.lista1 .exemplo2'))
+		console.log($('.lista1 .exemplo2:first')) //seleciona o primeiro item do array
+		console.log($('.lista1 .exemplo2:last')) //seleciona o último elemento do array
+		console.log($('.lista1 .exemplo2:even')) //seleciona os elementos com índices pares do array
+		console.log($('.lista1 .exemplo2:odd')) //seleciona os elementos com índices ímpares do array
+	</script>
+</html>
