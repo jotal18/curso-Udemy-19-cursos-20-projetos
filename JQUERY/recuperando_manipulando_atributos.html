@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function() {
+				console.log($('img').attr('border')) //selecionando o atributo da tag img
+				console.log($('img').attr('border', 20)) //definindo valor para o atributo border da tag imgconsole.log($('img').attr('border', 20)) //definindo valor para o atributo border da tag img
+				console.log($('div').attr('style', 'background-color: blue; width: 300px; height: 100px')) //alterando o style da div
+				console.log($('input').attr('value', 'teste')) //alterando o valor do input
+			})
+		</script>
+	</head>
+	<body>
+		<img src="esfera_1.png" border="5" />
+		<div style="background-color: red; width: 100px; height: 100px"></div>
+		<input type="text" value="Eu sou um input"/>
+	</body>
+</html>
