@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() => {
+				console.log('conteudo div 1:', $('#div1').html()) //recuperando o conteúdo interno
+				console.log($('#div1').html('<strong style="color:red; ">Eu sou o novo valor</strong>')) //setando novo valor na div
+			})
+		</script>
+	</head>
+	<body>
+		<div id="div1" style="border:solid 1px #000; width:150px; height:150px  ">
+			Div 1
+		</div>
+
+		<div id="div2" style="border:solid 1px #000; width:150px; height:150px  ">
+			Div 2
+		</div>
+
+	</body>
+</html>
