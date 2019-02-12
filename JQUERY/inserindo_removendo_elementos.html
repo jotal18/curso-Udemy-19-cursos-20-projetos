@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() => {
+				// append, prepend (inner tag) -> insere elemento dentro de um elemento com abertura e fechamento de tag
+				// append -> insere no final de um elemento
+				// prepend -> insere no início do elemento
+
+				$('#lista1').prepend('<li>Item antes</li>') //início
+				$('#lista1').append('<li>Item depois</li>') // final
+
+				$('#lista2').prepend('<div>Item antes</div>') //início
+				$('#lista2').append('<div>Item depois</div>') //final
+				
+				// after, before -> usado em tags que não encapsulam conteúdo
+				// after -> insere o elemento depois e fora de outro elemento HTML 
+				// before -> insere o elemento antes e fora de outro elemento HTML 
+
+				$('#lista2').before('<p>Eu fui inserido antes da div</p>') //inserindo parágrafo antes da div
+				$('#lista2').after('<p>Eu fui inserido depois após a div</p>') //inserindo parágrafo depois da div
+
+				// .html('valor') -> substitui todo o conteúdo do elemento
+				// $('#lista2').html('<p>Eu substitui todo o conteúdo que estava aqui</p>') 
+
+				// .remove() -> remove elemento HTML
+				$('.item2').remove()
+			})
+		</script>
+	</head>
+	<body>
+		<ul id="lista1">
+			<li>Item 1</li>
+			<li class="item2">Item 2</li>
+			<li>Item 3</li>
+		</ul>
+
+		<div id="lista2">
+			<div>Item 1</div>
+			<div>Item 2</div>
+			<div>Item 3</div>
+		</div>
+
+		<hr />
+	</body>
+</html>
