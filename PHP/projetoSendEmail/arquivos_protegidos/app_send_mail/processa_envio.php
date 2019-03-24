@@ -61,8 +61,8 @@
 	    $mail->SMTPOptions = array( 'ssl' => array( 'verify_peer' => false, 'verify_peer_name' => false, 'allow_self_signed' => true ) );
 
 	    //Remetente e Destinatários
-	    $mail->setFrom('jotafilho18@gmail.com', 'Jota Filho Remetente');		// Remetente
-	    $mail->addAddress($mensagem->__get('para'), 'Jota Filho Destinatário');  // Destinatário
+	    $mail->setFrom('email@gmail.com', 'Remetente');		// Remetente
+	    $mail->addAddress($mensagem->__get('para'), 'Destinatário');  // Destinatário
 	    // $mail->addAddress('ellen@example.com');            // Destinatário opcional
 	    // $mail->addReplyTo('info@example.com', 'Information');  //Destinatário de resposta para email de terceiro opcional
 	    // $mail->addCC('cc@example.com');						  // Destinatário com cópia opcional	
