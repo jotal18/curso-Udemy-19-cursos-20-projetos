@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+			
+			.desfocado {
+				background-color: white;
+			}
+
+			.focado {
+				background-color: green;
+			}			
+
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+
+			$(document).ready(() => {
+				/*
+				aplica eventos a todos os elementos mesmo que sejam criados 
+				após a chamada da função, aplica a todos os elementos-filhos
+				ou somente a um elemento
+				sintaxe -> elemento-pai, on/off, tipo de evento e o elemento
+				*/
+
+				// aplica o evento focus e blur a todos os elementos
+				// do tipo input que serão criados na página
+				$('body').on('focus', 'input', e => {
+					$(e.target).removeClass('desfocado')
+					$(e.target).addClass('focado')
+				})
+
+				$('body').on('blur', 'input', e => {
+					$(e.target).removeClass('focado')
+					$(e.target).addClass('desfocado')
+				})
+
+				$('body').append('<br /><br /><input type="text"/>')
+
+				// irá exluir todo evento do tipo blur
+				// para todos os elementos do tipo input
+				$('body').off('blur', 'input')
+
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<input type="text" class="desfocado" />
+
+	</body>
+
+</html>

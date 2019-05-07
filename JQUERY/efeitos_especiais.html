@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+			button {
+				margin-bottom: 5px;
+				width: 100px;
+			}
+
+			.div {
+				width: 100px;
+				height: 100px;
+			}
+
+			.div1 {
+				background-color: red
+			}
+
+			.div2 {
+				background-color: green
+			}
+
+			.div3 {
+				background-color: blue
+			}
+
+			.grupo {
+				padding: 25px;
+				float: left
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() => {
+				
+				$('#btn1').on('click', () => {
+					// mostra o elemento
+					// show('slow, medio, fast ou milisegundos Ex: 2000 = 2s')
+					$('#div1').show()
+
+					// esconde o elemento
+					// hide('slow, medio, fast ou milisegundos Ex: 2000 = 2s')
+					$('#div1').hide()
+
+					// mostra e esconde o elemento
+					// toggle('slow, medio, fast ou milisegundos Ex: 2000 = 2s')
+					$('#div1').toggle('slow')
+				})
+
+
+				$('#btn2').on('click', () => {
+					// aplica opacidade ao elemento
+					// fadeOut ('slow, medio, fast ou milisegundos Ex: 2000 = 2s')
+					$('#div2').fadeOut()
+
+					// remove opacidade ao elemento
+					// fadeIn ('slow, medio, fast ou milisegundos Ex: 2000 = 2s')
+					$('#div2').fadeIn()
+
+					// aplica e remove opacidade ao elemento
+					// fadeToggle ('slow, medio, fast ou milisegundos Ex: 2000 = 2s')
+					$('#div2').fadeToggle()
+
+					// aplica um grau de opacidade ao elemento
+					// fadeIn ('slow, medio, fast ou milisegundos', 0 a 1)
+					$('#div2').fadeTo('slow', 0.3)
+				})
+
+
+				$('#btn3').on('click', () => {
+					// aplica animação de slide para cima (o elemento some)
+					// slideUp ('slow, medio, fast ou milisegundos')
+					$('#div3').slideUp()
+
+					// aplica animação de slide para baixo (o elemento abaixa)
+					// slideDown ('slow, medio, fast ou milisegundos')
+					$('#div3').slideDown()
+
+					// aplica animação de slide para cima e/ou para baixo
+					// slideToggle ('slow, medio, fast ou milisegundos')
+					$('#div3').slideToggle()										
+				})
+				
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<div class="grupo">
+			<button type="button">DIV 1</button>
+			<div id="div1" class="div div1"></div>
+		</div>
+
+		<div class="grupo">
+			<button type="button">DIV 2</button>
+			<div id="div2" class="div div2"></div>
+		</div>
+
+		<div class="grupo">
+			<button type="button">DIV 3</button>
+			<div id="div3" class="div div3"></div>
+		</div>
+			
+	</body>
+
+</html>

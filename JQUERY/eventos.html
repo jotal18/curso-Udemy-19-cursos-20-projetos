@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+			#divExterna {
+				background-color: #ccc;
+				width: 80px;
+				height: 80px;
+				padding: 70px;
+			}
+
+			#divInterna {
+				width: 80px;
+				height: 80px;
+				background-color: blue;
+			}
+
+			.inputFocado {
+				background-color: #ff0000;
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() => {
+				// executa o script no momento em que a página é carregada
+				$('#onload').html('Página carregada')
+
+				// captura o evento do scroll(barra de rolagem) do navegador
+				$(window).scroll(() => {
+					$('#scroll').html('Scroll acionado')	
+				})
+
+				// captura o evento quando a janela for redimensionada, permite aplicar 
+				// estilos css aos elementos também
+				$(window).resize(() => {
+					$('#resize').html('Página redimensionada').css('background-color', 'red')
+				})
+
+				// o scroll e o resize podem ser aplicados também em elementos HTML
+				// usando function
+				/*
+				$('#div1').scroll(function() {
+					$(this).css('background-color', 'blue')
+				})
+				*/
+				// usando arrow function
+				$('#div1').scroll((e) => {
+					$(e.target).css('background-color', 'blue')
+				})
+
+				// captura o evento quando o botão principal (esquerdo)
+				// do mouse é pressionado
+				$('#btn1').mousedown(() => {
+					$('#div2').css('background-color', 'green')
+				})
+
+				// captura o evento quando o botão principal (esquerdo)
+				// do mouse é liberado
+				$('#btn1').mouseup(() => {
+					$('#div2').css('background-color', 'blue')
+				})
+
+				// captura o evento do click do mouse
+				// é a junção de 'mousedown' e 'mouseup' 
+				$('#btn1').click(() => {
+					$('#div2').css('background-color', 'blue')
+				})
+
+				// captura o evento dos dois clicks do mouse
+				$('#btn2').dblclick(() => {
+					$('#div2').css('background-color', 'yellow')
+				})
+
+				// captura o movimento do mouse em cima de algum elemento
+				// o offsetX e offsetX pegam a posição do ponteiro do mouse 
+				$('#div2').mousemove((e) => {
+					$('#resultadoDiv').html(' X: ' + e.offsetX + ' / Y: ' + e.offsetY)
+				})
+
+				// os dois métodos (mouseover e mouseenter)
+				// capturam quando o mouse passa por cima de um
+				// elemento (entrada)
+				$('#divExterna').mouseover(() => {
+					$('#resultadoDiv1').html('o mouse entrou')
+				})
+				$('#divExterna').mouseenter(() => {
+					$('#resultadoDiv1').html('o mouse entrou')
+				})
+
+				//os dois métodos (mouseout e mouseleave)
+				// capturam a saída do mouse em cima de um elemento
+				$('#divExterna').mouseout(() => {
+					$('#resultadoDiv1').html('o mouse saiu')
+				})
+				$('#divExterna').mouseleave(() => {
+					$('#resultadoDiv1').html('o mouse saiu')
+				})
+
+				//mouseover / mouseout (antigos e causam erros bubble)
+				//mouserenter / mouseleave (novos e evitam erros)
+				$('#divExterna').mouseenter(() => {
+					$('#resultadoDiv1').html('o mouse entrou')
+				})
+				$('#divExterna').mouseleave(() => {
+					$('#resultadoDiv1').html('o mouse saiu')
+				})
+				$('#divInterna').mouseenter(() => {
+					$('#resultadoDiv2').html('o mouse entrou')
+				})
+				$('#divInterna').mouseleave(() => {
+					$('#resultadoDiv2').html('o mouse saiu')
+				})
+
+
+				// captura o evento do teclado no momento
+				// em que uma tecla é pressionada
+				$('#teclado').keydown(() => {
+					$('#resultadoTecla').html('Tecla pressionada')
+				})
+
+				// captura o evento do teclado no momento
+				// em que uma tecla é liberada
+				$('#teclado').keyup(() => {
+					$('#resultadoTecla').html('Tecla liberada')
+				})
+				// captura o código da tecla digitada (e.keyCode)
+				$('#teclado').keyup((e) => {
+					$('#resultadoTecla').html('Tecla liberada')
+					// ao ser pressionada a tecla enter
+					if (e.keyCode == 13) {
+						//pega o valor do campo input
+						let txt = $(e.target).val()
+						// coloca dentro da tag span 
+						$('#resultadoTecla').html(txt)
+						// limpa o campo input
+						$(e.target).val('')
+					}
+				})
+				// verificando alguma tecla assim que for pressionada
+				// no caso, somente permitirá os números 1,2,3,4 no input
+				$('#teclado').keyup((e) => {
+					console.log(e.keyCode)
+					if (e.keyCode < 49 || e.keyCode > 52) {
+						let text = $(e.target).val()
+						let txt = text.slice(0, -1)
+
+						$(e.target).val(txt)
+					}
+				})
+
+				// captura o evento quando o elemento é selecionado
+				$('#nome').focus((e) => {
+					$(e.target).addClass('inputFocado')
+					console.log('Esse elemento HTML recebeu o foco')
+				})
+
+				// captura o evento quando o elemento deixa de estar selecionado
+				$('#nome').blur((e) => {
+					$(e.target).removeClass('inputFocado')
+					console.log('Esse elemento HTML perdeu o foco')
+				})
+
+				// captura mudança de um select, radio, checkbox
+				$('#opcao').change((e) => {
+					console.log($(e.target).val())
+				})
+
+				// captura o evento quando o formulário é enviado
+				$('#form').submit((e) => {
+					// evita que o ação padrão de um elemento aconteça
+					// no caso, evita que a página carregue toda vez
+					// que o formulário é enviado
+					e.preventDefault()
+					console.log('Formulário enviado')
+				})
+
+				// aplicando eventos a diversos elementos simultaneamente
+				$('#nome, #email').focus((e) => {
+					$(e.target).addClass('inputFocado')
+					console.log('Esse elemento HTML recebeu o foco')
+				})
+
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Eventos</h1>
+		</div>
+
+		<div>
+			<h3>Browser</h3>
+			<span>Onload: </span><span id="onload">?</span><br />
+			<span>Scroll: </span><span id="scroll">?</span><br />
+			<span>Resize window: </span><span id="resize">?</span>
+			<div id="div1" style="height: 100px; width: 100px; border: solid 1px; overflow-y: scroll;">
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			</div>
+			<hr />
+
+			<h3>Mouse</h3>
+			<button type="button" id="btn1">Clique aqui</button>
+			<button type="button" id="btn2">Clique aqui 2x</button>
+			<div id="div2" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+			<span>Resultado do evento sobre a div</span><span id="resultadoDiv"></span>
+
+			<div id="divExterna">
+				<div id="divInterna"></div>
+			</div>
+			<span>Div Externa:</span><span id="resultadoDiv1"></span><br />
+			<span>Div Interna:</span><span id="resultadoDiv2"></span>
+			<hr />
+
+			<h3>Teclado</h3>
+			<span>Nome:</span>
+			<input type="text" id="teclado" />
+			<span id="resultadoTecla">Resultado do evento sobre o input</span>
+			<hr />
+
+			<h3>Formulário</h3>
+			<form id="form">
+				<span>Nome:</span>
+				<input type="text" id="nome" />
+
+				<span>E-mail:</span>
+				<input type="text" id="email" />
+
+				<span>Motivo do contato:</span>
+				<select id="opcao">
+					<option value="">-- Selecione --</option>
+					<option value="duvida">Dúvida</option>
+					<option value="sugestao">Sugestão</option>
+				</select>
+				
+				<button type="submit">Enviar</button>
+			</form>
+		</div>
+	</body>
+
+</html>

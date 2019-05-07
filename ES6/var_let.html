@@ -21,11 +21,11 @@
 			let serie = 'Friends'
 
 			{
-				let serie = 'The Walking Dad' //essa variável irá sobrepor o valor da variável séria acima (hoisting)
+				let serie = 'The Walking Dad'
 				console.log('dentro do bloco ' + serie)
 			}
 
-			console.log('fora do bloco ' + serie) //irá imprimir The Walking Dad
+			console.log('fora do bloco ' + serie) //irá imprimir Friends, pois Let mantém o contexto
 
 
 			// Sempre use o LET
